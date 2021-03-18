@@ -1,62 +1,66 @@
-<p>signup works!</p>
+<!-- <p>signup works!</p> -->
 
 
-<!-- name:<input type="email" name="" id=""> -->
-
-
-
-
-
-
-
-  <form fxLayout="column" fxLayoutAlign="center center" >
-  <p>
-    <mat-form-field appearance="legacy">
-      <mat-label>Legacy form field</mat-label>
-      <input matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
+<form  #userform="ngForm" (ngSubmit)="onSubmit(userform.value)" fxLayoutGap="10px"  fxLayout="column" fxLayoutAlign="center center" >
+  <div class="example-container">
     <mat-form-field appearance="fill">
-      <mat-label>Fill form field</mat-label>
-      <input matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p> 
-</form>
-<!--  -->
-
-
-  <!-- <form fxLayout="column" fxLayoutAlign="center center" class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
+      <mat-label>Enter your Name</mat-label>
+      <input name="myname" required matInput ngModel >
+      <mat-error>Name is Invalid</mat-error>
+      <button mat-icon-button matSuffix >
+      </button>
     </mat-form-field>
   <br>
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      <mat-form-field hintLabel="should be atleast 6 character long." appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input type="password" name="mypassword" #pwInput="ngModel" ngModel required minlength="6" matInput [type]="hide ? 'password' : 'text'">
+        <mat-hint align="end">{{ pwInput.value?.length }}/6</mat-hint>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    <br>   
+    <mat-form-field appearance="fill">
+      <mat-label>Your Birth Date</mat-label>
+      <input [max]="maxDate" name="mydate" required ngModel matInput [matDatepicker]="picker" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-  </form> -->
-
-
+<br>
+    <mat-checkbox name="myagree" ngModel required matInput >Agree to Terms and Condition</mat-checkbox>
+    </div>
+    <button [disabled]="userform.invalid" mat-raised-button color="primary" type="submit"  >Submit</button>
+  </form>
 <!--  -->
+<!--  -->
+  <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f.value)"  fxLayout="column" fxLayoutAlign="center center" >
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your Name</mat-label>
+        <input name="myname" required matInput ngModel >
+        <mat-error>Name is Invalid</mat-error>
+        <button mat-icon-button matSuffix >
+        </button>
+      </mat-form-field>
+    <br>
+        <mat-form-field hintLabel="should be atleast 6 character long." appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input type="password" name="mypassword" #pwInput="ngModel" ngModel required minlength="6" matInput [type]="hide ? 'password' : 'text'">
+          <mat-hint align="end">{{ pwInput.value?.length }}/6</mat-hint>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      <br>   
+      <mat-form-field appearance="fill">
+        <mat-label>Your Birth Date</mat-label>
+        <input [max]="maxDate" name="mydate" required ngModel matInput [matDatepicker]="picker" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  <br>
+      <mat-checkbox name="myagree" ngModel required matInput >Agree to Terms and Condition</mat-checkbox>
+      </div>
+      <button [disabled]="f.invalid" mat-raised-button color="primary" type="submit"  >Submit</button>
+    </form> -->
+  

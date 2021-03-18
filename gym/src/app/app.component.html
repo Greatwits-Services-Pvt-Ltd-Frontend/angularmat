@@ -7,8 +7,26 @@
 
 
 
-<router-outlet></router-outlet>
 
+
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+        <p>This is Navbar</p>
+    </mat-sidenav>
+        <mat-sidenav-content>
+<!-- <button (click)="sidenav.toggle()">show side nav</button>
+<span class="material-icons">
+    view_headline
+    </span>     -->
+    <button (click)="sidenav.toggle()"><span class="material-icons">view_headline</span></button>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+            
+            
+    
+    
 
 
 
@@ -17,7 +35,8 @@
     <li><a routerLink="login" >login</a></li>
     <li><a routerLink="welcome" >welcome</a></li>
 </ul>
-    
+
+
 
 
 

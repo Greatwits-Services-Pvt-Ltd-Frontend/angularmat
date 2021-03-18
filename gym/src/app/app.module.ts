@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +12,11 @@ import {MatInputModule  } from "@angular/material/input";
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
-
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule} from '@angular/material/core';
+import {MatCheckboxModule  } from "@angular/material/checkbox";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import {MatToolbarModule  } from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -28,8 +32,14 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-   MatInputModule,
-FlexLayoutModule
+    MatInputModule,
+    FlexLayoutModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatSidenavModule,
+MatToolbarModule
   
   ],
 
