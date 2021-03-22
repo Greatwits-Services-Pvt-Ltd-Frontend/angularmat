@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   hide=true;
+  onSubmit(data:any){
+    console.log(data)
+  }
   constructor() { }
 
   ngOnInit(): void {

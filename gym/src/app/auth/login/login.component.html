@@ -1,7 +1,36 @@
-<p>login works!</p>
+<!-- <p>login works!</p> -->
 
 
-
+<form  #userform="ngForm" (ngSubmit)="onSubmit(userform.value)" fxLayoutGap="10px"  fxLayout="column" fxLayoutAlign="center center" >
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your Name</mat-label>
+        <input name="myname" required matInput ngModel >
+        <mat-error>Name is Invalid</mat-error>
+        <button mat-icon-button matSuffix >
+        </button>
+      </mat-form-field>
+    <br>
+        <mat-form-field hintLabel="should be atleast 6 character long." appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input type="password" name="mypassword" #pwInput="ngModel" ngModel required minlength="6" matInput [type]="hide ? 'password' : 'text'">
+          <mat-hint align="end">{{ pwInput.value?.length }}/6</mat-hint>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      <br>   
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Your Birth Date</mat-label>
+        <input [max]="maxDate" name="mydate" required ngModel matInput [matDatepicker]="picker" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+  <br>
+      <mat-checkbox name="myagree" ngModel required matInput >Agree to Terms and Condition</mat-checkbox>
+      </div>
+      <button [disabled]="userform.invalid" mat-raised-button color="primary" type="submit"  >Submit</button>
+    </form>
 
   
   

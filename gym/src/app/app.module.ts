@@ -10,13 +10,16 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatInputModule  } from "@angular/material/input";
 import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from "./auth/login/login.component";
+import { MatListModule } from "@angular/material/list";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule  } from "@angular/material/checkbox";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import {MatToolbarModule  } from "@angular/material/toolbar";
+import { MatTabsModule } from "@angular/material/tabs";
+import { TrainingModule } from './training/training.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,13 @@ import {MatToolbarModule  } from "@angular/material/toolbar";
     MatNativeDateModule,
     MatCheckboxModule,
     MatSidenavModule,
-MatToolbarModule
+MatToolbarModule,
+MatListModule,
+MatTabsModule,
+TrainingModule
+
+
+
   
   ],
 
