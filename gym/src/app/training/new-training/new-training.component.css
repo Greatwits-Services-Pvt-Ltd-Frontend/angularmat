@@ -7,12 +7,9 @@
     background-size: cover;
   }
 
-
-  .newtraining{
-    max-width: 400px;  
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
+.new-training{
+  padding: 30px;
+}
+  
    
     
-  }

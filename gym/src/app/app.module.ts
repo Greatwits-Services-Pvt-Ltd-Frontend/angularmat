@@ -21,6 +21,8 @@ import {MatToolbarModule  } from "@angular/material/toolbar";
 import { MatTabsModule } from "@angular/material/tabs";
 import { TrainingModule } from './training/training.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
